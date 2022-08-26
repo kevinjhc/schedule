@@ -120,3 +120,17 @@ function generateMessage() {
 
   location.href = "sms://open?addresses=6177850183,6178332951&body=" + message;
 }
+
+function copy() {
+  var message = "";
+
+  var schedules = document.getElementsByClassName("schedule");
+  for (var i = 0; i < schedules.length; i++) {
+    message += tConvert(schedules[i].querySelector('input[name="time"]').value) + " ";
+    message += schedules[i].querySelector('input[name="title"]').value + "\r\n";
+    if (schedules[i].querySelector('input[name="notes"]').value != "") {
+      message += schedules[i].querySelector('input[name="notes"]').value + "\r\n";
+    }
+  }
+  navigator.clipboard.writeText(message);
+}

@@ -81,11 +81,18 @@ input[type=time] {
   opacity: 0;
 }
 
-.send-message {
+.actions {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.send-message, .copy {
+  width: 50%;
   padding: 16px;
   border: 0;
   color: white;
@@ -98,6 +105,10 @@ input[type=time] {
   z-index: 100;
 }
 
-.send-message:hover {
+.send-message:hover, .copy:hover {
   background: #2980b9;
+}
+
+.send-message {
+  border-right: 1px solid #fff;
 }
